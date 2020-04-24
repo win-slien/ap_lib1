@@ -3,5 +3,7 @@
         <file>main.qml</file>
         <file>ContactItem.qml</file>
         <file>icons/npp.jpg</file>
+        <file>ContactList.qml</file>
+        <file>MainToolBar.qml</file>
     </qresource>
 </RCC>
