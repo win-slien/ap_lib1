@@ -8,20 +8,40 @@ ListView{
     boundsBehavior: ListView.StopAtBounds
     ScrollBar.vertical: ScrollBar{}
     delegate: ContactItem{
-        ltext: name
+        ltext: {
+            if(nname)
+                return nname;
+            else
+                return "";
+        }
         icon:{
-            if(sicon)
-                return sicon;
+            if(iicon)
+                return iicon;
             else
                 var a = Math.round(Math.random() * (8 - 1) + 1);
-                if(a === 8)
-                    return "icons/nnn.jpg";
-                else
-                    return "icons/" + a.toString(10) + ".jpg";
+            if(a === 8)
+                return "icons/nnn.jpg";
+            else
+                return "icons/" + a.toString(10) + ".jpg";
         }
-        time: ttime
-        mess: mmess
-        coun: ccoun
+//        time: {
+//            if(ttime)
+//                return ttime;
+//            else
+//                return "только что";
+//        }
+        mess: {
+            if(mmess)
+                return mmess
+            else
+                return "Hey there! I am using WhatsApp.";
+        }
+//        coun:{
+//            if(ccoun)
+//                return ccoun;
+//            else
+//                return "1";
+//        }
         selected: list.currentIndex === index
         onLeftClick: {
             list.currentIndex = index

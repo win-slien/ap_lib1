@@ -7,8 +7,8 @@ Rectangle {
     property alias icon: icon.source
     property alias ltext: lname.text
     property alias mess: mess.text
-    property alias time: time.text
-    property alias coun: coun.text
+//    property alias time: time.text
+//    property alias coun: coun.text
     property bool selected: false
 
     signal leftClick()
@@ -28,11 +28,9 @@ Rectangle {
     RowLayout{
         anchors.fill: parent
         anchors.leftMargin: 5
-        //        anchors.rightMargin: 5
         anchors.topMargin: 4
         Image{
             id:icon
-            source: "icons/nnn.jpg"
             Layout.fillHeight: true
             Layout.preferredWidth: height
             Layout.margins: 8
@@ -52,21 +50,19 @@ Rectangle {
                 Label{
                     id: lname
                     Layout.fillWidth: true
-                    //                    font.bold: true
                     font.family: "Roboto"
                     font.pixelSize: 17
                     horizontalAlignment: Text.AlignLeft
                     verticalAlignment: Text.AlignHCenter
                 }
-                Label{
-                    id: time
-                    text:"только что"
-                    Layout.fillWidth: true
-                    font.family: "Roboto"
-                    font.pixelSize: 12
-                    horizontalAlignment: Text.AlignRight
-                    color: "#888"
-                }
+//                Label{
+//                    id: time
+//                    Layout.fillWidth: true
+//                    font.family: "Roboto"
+//                    font.pixelSize: 12
+//                    horizontalAlignment: Text.AlignRight
+//                    color: "#888"
+//                }
             }
             RowLayout
             {
@@ -76,50 +72,48 @@ Rectangle {
                     id: mess
                     Layout.fillWidth: true
                     font.family: "Roboto"
-                    text: "Hey there! I am using WhatsApp."
                     font.pixelSize: 12
                     horizontalAlignment: Text.AlignLeft
                     verticalAlignment: Text.AlignHCenter
                     color: "#444"
                 }
-                Rectangle{
-                    height: 20
-                    width: 20
-                    radius: 10
-                    Text{
-                        id: coun
-                        text:"1"
-                        anchors.fill: parent
-                        font.family: "Roboto"
-                        font.pixelSize: 13
-                        horizontalAlignment: Text.AlignHCenter
-                        verticalAlignment: Text.AlignVCenter
-                        color: {
-                            if(text !== ""){
-                                return "white"
-                            }else
-                            {
-                                if (selected)
-                                    return "#ddd"
-                                if (area.containsMouse)
-                                    return "#eee"
-                                return "#faf7f7"
-                            }
-                        }
-                    }
-                    color: {
-                        if(coun.text !== ""){
-                            return "#11d13f"
-                        }else
-                        {
-                            if (selected)
-                                return "#ddd"
-                            if (area.containsMouse)
-                                return "#eee"
-                            return "#faf7f7"
-                        }
-                    }
-                }
+//                Rectangle{
+//                    height: 20
+//                    width: 20
+//                    radius: 10
+//                    Text{
+//                        id: coun
+//                        anchors.fill: parent
+//                        font.family: "Roboto"
+//                        font.pixelSize: 13
+//                        horizontalAlignment: Text.AlignHCenter
+//                        verticalAlignment: Text.AlignVCenter
+//                        color: {
+//                            if(text !== ""){
+//                                return "white"
+//                            }else
+//                            {
+//                                if (selected)
+//                                    return "#ddd"
+//                                if (area.containsMouse)
+//                                    return "#eee"
+//                                return "#faf7f7"
+//                            }
+//                        }
+//                    }
+//                    color: {
+//                        if(coun.text !== ""){
+//                            return "#11d13f"
+//                        }else
+//                        {
+//                            if (selected)
+//                                return "#ddd"
+//                            if (area.containsMouse)
+//                                return "#eee"
+//                            return "#faf7f7"
+//                        }
+//                    }
+//                }
 
             }
             Rectangle{
@@ -135,7 +129,13 @@ Rectangle {
                 }
                 Rectangle {
                     height: 1
-                    color: "#ddd"
+                    color: /*"#ddd"*/{
+                        if (selected)
+                            return "#ddd"
+                        if (area.containsMouse)
+                            return "#eee"
+                        return "#faf7f7"
+                    }
                     anchors.bottom: parent.bottom
                     anchors.left: parent.left
                     anchors.right: parent.right

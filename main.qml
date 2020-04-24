@@ -13,21 +13,23 @@ Window {
     ListModel{
         id: contactsModel
         ListElement{
-            name: "This stupid zombie"
-            sicon: "icons/3.jpg"
-            mmess: "MMMMMUUUUUUUUUU I WILL KILL YOU!!"
-            ttime: "сегодня"
-            ccoun: ""
+            nname: "This stupid zombie"
+            iicon: "icons/3.jpg"
+             mmess: "MMMMMUUUUUUUUUU I WILL KILL YOU!!"
+//            ttime: "сегодня"
+//            ccoun: "99"
         }
         ListElement{
-            name: "Wazzzuupp?"
-            sicon: "icons/2.jpg"
-            ttime: "вчера"
+            nname: "Wazzzuupp?"
+            iicon: "icons/2.jpg"
+//            ttime: "вчера"
+//            ccoun: ""
         }
         ListElement{
-            name: "Small boy"
-            sicon: "icons/1.jpg"
-            ttime: "24.05.2020"
+            nname: "Small boy"
+            iicon: "icons/1.jpg"
+//            ttime: "24.05.2020"
+//            ccoun: ""
         }
     }
 ColumnLayout{
@@ -35,7 +37,7 @@ ColumnLayout{
     MainToolBar{
         Layout.fillWidth: true
         onNewItem: {
-            contactsModel.insert(0, {name: text})
+            contactsModel.insert(0, {nname: text})
         }
     }
     ContactList{
