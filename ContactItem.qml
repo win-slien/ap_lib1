@@ -6,6 +6,9 @@ Rectangle {
     id:me
     property alias icon: icon.source
     property alias ltext: lname.text
+    property alias mess: mess.text
+    property alias time: time.text
+    property alias coun: coun.text
     property bool selected: false
 
     signal leftClick()
@@ -29,11 +32,12 @@ Rectangle {
         anchors.topMargin: 4
         Image{
             id:icon
-            source: "icons/npp.jpg"
+            source: "icons/nnn.jpg"
             Layout.fillHeight: true
             Layout.preferredWidth: height
-            Layout.margins: 7
-            Layout.rightMargin: 20
+            Layout.margins: 8
+            Layout.rightMargin: 12
+            Layout.leftMargin: 10
             layer.enabled: true
             layer.effect: OpacityMask {
                 maskSource: mask
@@ -44,8 +48,7 @@ Rectangle {
             RowLayout{
                 Layout.topMargin: 10
                 Layout.fillHeight: true
-                anchors.right: parent.right
-                anchors.rightMargin: 10
+                Layout.rightMargin: 25
                 Label{
                     id: lname
                     Layout.fillWidth: true
@@ -57,7 +60,7 @@ Rectangle {
                 }
                 Label{
                     id: time
-                    text:"вчера"
+                    text:"только что"
                     Layout.fillWidth: true
                     font.family: "Roboto"
                     font.pixelSize: 12
@@ -68,33 +71,61 @@ Rectangle {
             RowLayout
             {
                 Layout.fillHeight: true
-                anchors.right: parent.right
-                anchors.rightMargin: 10
-
+                Layout.rightMargin: 25
                 Label{
                     id: mess
                     Layout.fillWidth: true
-                    //                    font.bold: true
                     font.family: "Roboto"
                     text: "Hey there! I am using WhatsApp."
                     font.pixelSize: 12
                     horizontalAlignment: Text.AlignLeft
                     verticalAlignment: Text.AlignHCenter
+                    color: "#444"
                 }
-                Label{
-                    id: coun
-                    text:"вчера"
-                    Layout.fillWidth: true
-                    font.family: "Roboto"
-                    font.pixelSize: 12
-                    horizontalAlignment: Text.AlignRight
-                    verticalAlignment: Text.AlignHCenter
+                Rectangle{
+                    height: 20
+                    width: 20
+                    radius: 10
+                    Text{
+                        id: coun
+                        text:"1"
+                        anchors.fill: parent
+                        font.family: "Roboto"
+                        font.pixelSize: 13
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                        color: {
+                            if(text !== ""){
+                                return "white"
+                            }else
+                            {
+                                if (selected)
+                                    return "#ddd"
+                                if (area.containsMouse)
+                                    return "#eee"
+                                return "#faf7f7"
+                            }
+                        }
+                    }
+                    color: {
+                        if(coun.text !== ""){
+                            return "#11d13f"
+                        }else
+                        {
+                            if (selected)
+                                return "#ddd"
+                            if (area.containsMouse)
+                                return "#eee"
+                            return "#faf7f7"
+                        }
+                    }
                 }
+
             }
             Rectangle{
                 id:botrect
                 Layout.fillWidth: true
-                height: 14
+                height: 10
                 color: {
                     if (selected)
                         return "#ddd"

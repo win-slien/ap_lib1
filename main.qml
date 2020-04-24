@@ -7,7 +7,7 @@ Window {
     visible: true
     width: 400
     height: 480
-    title: qsTr("Контакты")
+    title: qsTr("WhatsApp Contacts Clone")
     color: "#faf7f7"
 
     ListModel{
@@ -15,14 +15,19 @@ Window {
         ListElement{
             name: "This stupid zombie"
             sicon: "icons/3.jpg"
+            mmess: "MMMMMUUUUUUUUUU I WILL KILL YOU!!"
+            ttime: "сегодня"
+            ccoun: ""
         }
         ListElement{
             name: "Wazzzuupp?"
             sicon: "icons/2.jpg"
+            ttime: "вчера"
         }
         ListElement{
             name: "Small boy"
             sicon: "icons/1.jpg"
+            ttime: "24.05.2020"
         }
     }
 ColumnLayout{
@@ -30,7 +35,7 @@ ColumnLayout{
     MainToolBar{
         Layout.fillWidth: true
         onNewItem: {
-            contactsModel.append({name: text})
+            contactsModel.insert(0, {name: text})
         }
     }
     ContactList{
