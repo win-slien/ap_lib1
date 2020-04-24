@@ -5,9 +5,10 @@ import QtQuick.Layouts 1.12
 
 Window {
     visible: true
-    width: 320
+    width: 400
     height: 480
     title: qsTr("Контакты")
+    color: "#faf7f7"
 
     ListModel{
         id: contactsModel
