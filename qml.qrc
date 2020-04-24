@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>ContactItem.qml</file>
+        <file>icons/npp.jpg</file>
     </qresource>
 </RCC>
