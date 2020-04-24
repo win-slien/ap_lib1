@@ -5,5 +5,8 @@
         <file>icons/npp.jpg</file>
         <file>ContactList.qml</file>
         <file>MainToolBar.qml</file>
+        <file>icons/1.jpg</file>
+        <file>icons/2.jpg</file>
+        <file>icons/3.jpg</file>
     </qresource>
 </RCC>

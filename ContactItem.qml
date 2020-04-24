@@ -1,7 +1,7 @@
 import QtQuick 2.12
 import QtQuick.Layouts 1.12
 import QtQuick.Controls 2.12
-
+import QtGraphicalEffects 1.0
 Rectangle {
     id:me
     property alias icon: icon.source
@@ -12,7 +12,7 @@ Rectangle {
     signal rightClick()
 
     width: parent.width
-    height: 60
+    height: 80
 
     color: {
         if (selected)
@@ -32,6 +32,10 @@ Rectangle {
             Layout.fillHeight: true
             Layout.preferredWidth: height
             Layout.margins: 7
+            layer.enabled: true
+            layer.effect: OpacityMask {
+                maskSource: mask
+            }
         }
         Label{
             id: lname
@@ -39,6 +43,15 @@ Rectangle {
             font.bold: true
         }
     }
+
+    Rectangle {
+        id: mask
+        width: me.height
+        height: me.height
+        radius: me.height/2
+        visible: false
+    }
+
     MouseArea {
         id: area
         anchors.fill: parent

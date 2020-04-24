@@ -12,13 +12,16 @@ Window {
     ListModel{
         id: contactsModel
         ListElement{
-            name: "Ирина"
+            name: "This stupid zombie"
+            sicon: "icons/3.jpg"
         }
         ListElement{
-            name: "Настя"
+            name: "Wazzzuupp?"
+            sicon: "icons/2.jpg"
         }
         ListElement{
-            name: "Дамир"
+            name: "Small boy"
+            sicon: "icons/1.jpg"
         }
     }
 ColumnLayout{
