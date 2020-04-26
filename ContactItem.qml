@@ -54,6 +54,7 @@ Rectangle {
                     font.pixelSize: 17
                     horizontalAlignment: Text.AlignLeft
                     verticalAlignment: Text.AlignHCenter
+                    elide: Label.ElideRight
                 }
 //                Label{
 //                    id: time
@@ -75,6 +76,7 @@ Rectangle {
                     font.pixelSize: 12
                     horizontalAlignment: Text.AlignLeft
                     verticalAlignment: Text.AlignHCenter
+                    elide: Label.ElideRight
                     color: "#444"
                 }
 //                Rectangle{
