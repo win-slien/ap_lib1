@@ -1,2 +1,4 @@
-# ap_lib1
-#hello everyone, this is super-mega clone of popular messenger
+# Список контактов на QML
+Репозиторий содержит в себе реализованный на QML простой список с возможностями создания и удаления элементов.
+
+![Alt text](/screenshots/ss1.png?raw=true "Главное окно приложения")
